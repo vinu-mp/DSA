@@ -29,24 +29,25 @@ var findAnagrams = function(s, p) {
   let left = 0, right = 0, res = [], count = p.length; // 3
   
   while(right < s.length) {
-    console.log('count => ', charMap, charMap[s[right]] );
+    console.log('count before loop=> ', charMap, charMap[s[right]] );
     if(charMap[s[right]] > 0) {
       count--;
-      
+      charMap[s[right]]--;
     }
-    charMap[s[right]]--;
+   
     right++;
     if(count === 0) res.push(left);
     if(right - left === p.length) {
+      console.log('count after window => ', charMap, 's[left] =>', s[left] );
       if(charMap[s[left]] >= 0) {
-        count++;
+        count++; 
+        charMap[s[left]]++;
       }
-      charMap[s[left]]++;
       left++;
     }
     
   }
   return res;
 }
-
+// adsfbbac
 console.log(findAnagrams('cbaebabacd', 'abc'))
