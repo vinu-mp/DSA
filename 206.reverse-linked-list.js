@@ -34,10 +34,11 @@ var reverseList = function(head) {
   // Recursive
   if(!head || !head.next) return head;
   let newHead = reverseList(head.next);
+  console.log(newHead, head);
   head.next.next = head;
   head.next = null
   
-return newHead
+  return newHead
 };
 
 // 1->2->3->4->5->null => null=>1 2->3
