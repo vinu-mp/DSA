@@ -33,7 +33,7 @@ var maxSubArray = function(nums) {
   // return max;
 
   // Kadanes
-  let i=0, sum = 0, max = -Infinity, start = -1, end = -1, startFlag=-1;
+  let i=0, sum = 0, max = -Infinity, start = -1, end = -1, startFlag = -1;
 
   while( i < nums.length) {
 
@@ -57,3 +57,5 @@ var maxSubArray = function(nums) {
   console.log('array => ', nums.slice(start, end + 1))
   return max;
 };
+
+console.log(maxSubArray([-2,-3,-3]));
