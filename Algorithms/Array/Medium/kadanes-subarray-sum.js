@@ -56,6 +56,17 @@ var maxSubArray = function(nums) {
 
   console.log('array => ', nums.slice(start, end + 1))
   return max;
+
+
+  // Alternate approach
+  // let curSum = -Infinity, global=-Infinity
+  // let i=0;
+  // while(i < nums.length) {
+  //     curSum = Math.max(nums[i], curSum + nums[i] );
+  //     global = Math.max(global, curSum)
+  //     i++;
+  // }
+  // return global
 };
 
 console.log(maxSubArray([-2,-3,-3]));
